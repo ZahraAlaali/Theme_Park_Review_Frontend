@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import ShowRides from "./ShowRides"
+import { NavLink } from "react-router-dom"
 
 const Home = () => {
   const [rides, setRides] = useState(null)
@@ -13,11 +14,16 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
-      {rides?.map((ride) => (
-        <ShowRides key={ride._id} ride={ride} />
-      ))}
-    </div>
+    <>
+      <nav>
+        <NavLink to={"/addRide"}>Add Game/Ride</NavLink>
+      </nav>
+      <div>
+        {rides?.map((ride) => (
+          <ShowRides key={ride._id} ride={ride} />
+        ))}
+      </div>
+    </>
   )
 }
 

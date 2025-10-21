@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, NavLink } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import ViewReview from "./ViewReview"
@@ -7,14 +7,16 @@ const ViewReviews = () => {
   let { rideId } = useParams()
   const [reviews, setReviews] = useState(null)
   const [rideInfo, setRideInfo] = useState({})
+
   useEffect(() => {
     const getReviews = async () => {
       const response = await axios.get(`http://localhost:3000/rating/${rideId}`)
       setReviews(response.data)
+      const ride = await axios.get(`http://localhost:3000/rides/${rideId}`)
       setRideInfo({
-        name: response.data[0].rideId.name,
-        image: response.data[0].rideId.image,
-        description: response.data[0].rideId.description,
+        name: ride.data.name,
+        image: ride.data.image,
+        description: ride.data.description,
       })
     }
     getReviews()
@@ -22,6 +24,9 @@ const ViewReviews = () => {
 
   return (
     <>
+      <nav>
+        <NavLink to={`/addReview/${rideId}`}>Add Review</NavLink>
+      </nav>
       <div>
         <img src={rideInfo?.image} alt={rideInfo?.name} />
         <h1>{rideInfo?.name}</h1>

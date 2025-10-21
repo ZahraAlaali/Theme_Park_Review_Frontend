@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import axios from "axios"
+import { useParams } from "react-router-dom"
 
-const Review = ({ reviews, setReviews }) => {
+const Review = () => {
+  let { rideId } = useParams()
   const initialState = {
-    rateRide: "",
-    subject: "",
+    username: "",
+    rating: "0",
     review: "",
+    rideId: rideId,
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -16,50 +19,46 @@ const Review = ({ reviews, setReviews }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const response = await axios.post("http://localhost:3000/", formState)
-    let reviewList = [...reviews]
-    reviewList.push(response.data)
-    setReviews(reviewList)
+    const response = await axios.post(
+      `http://localhost:3000/rating/${rideId}`,
+      formState
+    )
+    // let reviewList = [...reviews]
+    // reviewList.push(response.data)
+    // setReviews(reviewList)
     setFormState(initialState)
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="rateRide">Rate the Ride:</label>
-      <select
-        name="rateRide"
+      <label htmlFor="username">Usename (not Required):</label>
+      <input
+        type="text"
+        name="username"
         onChange={handleChange}
-        value={formState.rateRide}
-      >
-        <option value="" disabled defaultValue>
-          Select Issue Type
-        </option>
-        <option value="zero">Not worthy of Rating</option>
-        <option value="oneStar">One Star</option>
-        <option value="twoStar">two Star</option>
-        <option value="threeStar">Three Star</option>
-        <option value="fourStar">Four Star</option>
-        <option value="fiveStar">Five Star</option>
+        value={formState.username}
+      />
+      <br />
+
+      <label htmlFor="rating">Rate the Ride:</label>
+      <select name="rating" onChange={handleChange} value={formState.rating}>
+        <option value="0">Not worthy of Rating</option>
+        <option value="1">One Star</option>
+        <option value="2">two Star</option>
+        <option value="3">Three Star</option>
+        <option value="4">Four Star</option>
+        <option value="5">Five Star</option>
       </select>
       <br />
 
-      <label htmlFor="subject">Subject:</label>
-      <input
-        type="text"
-        name="subject"
-        onChange={handleChange}
-        value={formState.subject}
-      />
-      <br />
-      <label htmlFor="msg">Review</label>
       <textarea
-        name="msg"
+        name="review"
         cols="30"
         rows="10"
         onChange={handleChange}
-        value={formState.msg}
+        value={formState.review}
       ></textarea>
-      <button type="submit">Send</button>
+      <button type="submit">Add Review</button>
     </form>
   )
 }
