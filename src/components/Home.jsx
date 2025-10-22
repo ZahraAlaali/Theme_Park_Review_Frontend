@@ -19,7 +19,7 @@ const Home = () => {
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/addRide"}>Add Game/Ride</NavLink>
       </nav>
-      <div>
+      <div className="container">
         {rides?.map((ride) => (
           <ShowRides key={ride._id} ride={ride} />
         ))}
