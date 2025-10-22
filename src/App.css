@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
   background: linear-gradient(135deg, #fcefee, #e8f7f5);
   color: #4a4a4a;
@@ -71,9 +72,8 @@ h3 {
 img {
   /* max-width: 100%; */
   /* height:500px; */
-  width: 30%;
+  width: 100%;
   border-radius: 8px;
-  margin-bottom: 1rem;
 }
 
 div {
@@ -98,3 +98,15 @@ form {
 h1 {
   text-align: center;
 } */
+
+.page {
+  width: 30%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
