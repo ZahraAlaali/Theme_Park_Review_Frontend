@@ -204,3 +204,17 @@ img:hover {
 .header {
   text-align: left;
 }
+.reviews {
+  background-color: rgb(249, 231, 207);
+  box-shadow: #6c5b7b;
+  border-radius: 35px;
+  width: 600px;
+}
+.reviews div {
+  background-color: rgb(255, 213, 228);
+  border-radius: 35px;
+  min-width: 40%;
+margin-bottom: 10px;
+
+
+}
