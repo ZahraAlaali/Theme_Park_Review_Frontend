@@ -15,14 +15,16 @@ const ViewReview = ({ review, setReviews, reviews, index }) => {
   }
 
   return (
-    <>
+    <div>
       <div>
-        <h3>{review.username ? review.username : "Anonymous"}</h3>
-        <h3>{review.rating}</h3>
-        <p>{review.review}</p>
+        <h3 className="header">
+          {review.username ? review.username : "Anonymous"}
+        </h3>
+        <h3 className="header">Rating: {review.rating}</h3>
+        <p>Review: {review.review}</p>
       </div>
       <button onClick={deleteReview}>Delete Review</button>
-    </>
+    </div>
   )
 }
 export default ViewReview

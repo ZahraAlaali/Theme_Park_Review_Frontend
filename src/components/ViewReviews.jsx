@@ -39,13 +39,13 @@ const ViewReviews = () => {
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={`/addReview/${rideId}`}>Add Review</NavLink>
       </nav>
-      <div className="view" >
+      <div className="view">
         <img className="img" src={rideInfo?.image} alt={rideInfo?.name} />
         <h1>{rideInfo?.name}</h1>
         <p>{rideInfo?.description}</p>
         <button onClick={deleteRide}>Delete Game</button>
       </div>
-      <div>
+      <div className="reviews">
         {reviews?.map((review, index) => (
           <ViewReview
             key={review._id}
