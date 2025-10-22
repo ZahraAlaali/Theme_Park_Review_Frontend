@@ -1,7 +1,9 @@
 import { useState } from "react"
 import axios from "axios"
+import { NavLink, useNavigate } from "react-router-dom"
 
 const Ride = () => {
+  let navigate = useNavigate()
   const initialState = {
     name: "",
     image: "",
@@ -15,7 +17,10 @@ const Ride = () => {
     // let issueList = [...issues]
     // issueList.push(response.data)
     // setIssues(issueList)
-    setFormState(initialState)
+    if (response.status === 200) {
+      setFormState(initialState)
+      navigate("/")
+    }
   }
 
   const handleChange = (event) => {
@@ -56,6 +61,7 @@ const Ride = () => {
         ></textarea>
         <button type="submit">Add</button>
       </form>
+      <button onClick={() => navigate("/")}>Back To Home Page</button>
     </>
   )
 }
