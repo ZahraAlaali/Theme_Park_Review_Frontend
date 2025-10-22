@@ -5,7 +5,7 @@ const ViewReview = ({ review, setReviews, reviews, index }) => {
   const deleteReview = async (event) => {
     event.preventDefault()
     const response = await axios.delete(
-      `http://localhost:3000/rating/${review.rideId}/${review._id}`
+      `https://theme-park-review-backend.onrender.com/rating/${review.rideId}/${review._id}`
     )
     if (response.status === 200) {
       let reviewList = [...reviews]

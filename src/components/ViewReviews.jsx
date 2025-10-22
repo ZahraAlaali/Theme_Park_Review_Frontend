@@ -11,7 +11,7 @@ const ViewReviews = () => {
 
   const deleteRide = async () => {
     const response = await axios.delete(
-      `http://localhost:3000/rides/${rideInfo.id}`
+      `https://theme-park-review-backend.onrender.com/rides/${rideInfo.id}`
     )
     if (response.status === 200) {
       navigate("/")
@@ -20,9 +20,13 @@ const ViewReviews = () => {
 
   useEffect(() => {
     const getReviews = async () => {
-      const response = await axios.get(`http://localhost:3000/rating/${rideId}`)
+      const response = await axios.get(
+        `https://theme-park-review-backend.onrender.com/rating/${rideId}`
+      )
       setReviews(response.data)
-      const ride = await axios.get(`http://localhost:3000/rides/${rideId}`)
+      const ride = await axios.get(
+        `https://theme-park-review-backend.onrender.com/rides/${rideId}`
+      )
       setRideInfo({
         id: ride.data._id,
         name: ride.data.name,

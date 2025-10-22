@@ -22,7 +22,7 @@ const Review = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const response = await axios.post(
-      `http://localhost:3000/rating/${rideId}`,
+      `https://theme-park-review-backend.onrender.com/rating/${rideId}`,
       formState
     )
     // let reviewList = [...reviews]

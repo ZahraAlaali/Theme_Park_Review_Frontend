@@ -7,7 +7,9 @@ const Home = () => {
   const [rides, setRides] = useState(null)
   useEffect(() => {
     const getRides = async () => {
-      const allRides = await axios.get("http://localhost:3000/rides")
+      const allRides = await axios.get(
+        "https://theme-park-review-backend.onrender.com/rides"
+      )
       setRides(allRides.data)
     }
     getRides()
