@@ -50,7 +50,12 @@ const Review = () => {
         <br />
 
         <label htmlFor="rating">Rate the Ride:</label>
-        <select name="rating" onChange={handleChange} value={formState.rating}>
+        <select
+          name="rating"
+          required
+          onChange={handleChange}
+          value={formState.rating}
+        >
           <option value="0">Not worthy of Rating</option>
           <option value="1">One Star</option>
           <option value="2">two Stars</option>
@@ -66,6 +71,7 @@ const Review = () => {
           rows="10"
           onChange={handleChange}
           value={formState.review}
+          required
         ></textarea>
         <button type="submit">Add Review</button>
       </form>
