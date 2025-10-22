@@ -16,6 +16,7 @@ const Home = () => {
   return (
     <>
       <nav>
+        <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/addRide"}>Add Game/Ride</NavLink>
       </nav>
       <div>

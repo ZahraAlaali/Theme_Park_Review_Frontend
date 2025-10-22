@@ -23,35 +23,40 @@ const Ride = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input
-        required
-        type="text"
-        name="name"
-        onChange={handleChange}
-        value={formState.name}
-      />
+    <>
+      <nav>
+        <NavLink to={"/"}>Home</NavLink>
+      </nav>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input
+          required
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={formState.name}
+        />
 
-      <label htmlFor="image">Image:</label>
-      <input
-        required
-        type="text"
-        name="image"
-        onChange={handleChange}
-        value={formState.image}
-      />
+        <label htmlFor="image">Image:</label>
+        <input
+          required
+          type="text"
+          name="image"
+          onChange={handleChange}
+          value={formState.image}
+        />
 
-      <label htmlFor="description">Description:</label>
-      <textarea
-        name="description"
-        cols="30"
-        rows="10"
-        onChange={handleChange}
-        value={formState.description}
-      ></textarea>
-      <button type="submit">Add</button>
-    </form>
+        <label htmlFor="description">Description:</label>
+        <textarea
+          name="description"
+          cols="30"
+          rows="10"
+          onChange={handleChange}
+          value={formState.description}
+        ></textarea>
+        <button type="submit">Add</button>
+      </form>
+    </>
   )
 }
 
