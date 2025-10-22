@@ -205,6 +205,7 @@ img:hover {
   text-align: left;
 }
 .reviews {
+  margin: 0 auto;
   background-color: rgb(249, 231, 207);
   box-shadow: #6c5b7b;
   border-radius: 35px;
@@ -214,7 +215,5 @@ img:hover {
   background-color: rgb(255, 213, 228);
   border-radius: 35px;
   min-width: 40%;
-margin-bottom: 10px;
-
-
+  margin-bottom: 10px;
 }
