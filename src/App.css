@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background: linear-gradient(135deg, #fcefee, #e8f7f5);
   color: #4a4a4a;
 }
@@ -28,7 +28,7 @@ form {
   padding: 2rem;
   margin: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 label {
@@ -37,7 +37,9 @@ label {
   color: #7b8ea1;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   width: 100%;
   padding: 0.6rem;
   margin-top: 0.3rem;
@@ -61,14 +63,15 @@ button:hover {
   background-color: #b2d8d2;
 }
 
-h1, h3 {
+h1,
+h3 {
   color: #6c5b7b;
 }
 
 img {
-  max-width: 100%;
-  height:500px;
-  width:500px;
+  /* max-width: 100%; */
+  /* height:500px; */
+  width: 30%;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
@@ -76,8 +79,6 @@ img {
 div {
   padding: 1rem;
 }
-
-
 
 /* body {
   margin: 0;
